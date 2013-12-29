@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+  id="com.rossgerbasi.cordova.glass.gesture"
+  version="0.0.1">
+
+    <name>Glassgesture</name>
+    
+    <keywords>cordova,google glass,glass,gesture,android</keywords>
+    
+    <description>
+      Plugin to add gesture events from Google Glass to your Cordova Application.
+    </description>
+    
+    <license>MIT</license>
+
+    <author>Ross Gerbasi</author>
+
+    <engines>
+        <engine name="cordova" version=">=3.0" />
+    </engines>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="GlassGesture">
+                <param name="android-package" value="com.rossgerbasi.cordova.glass.GlassGesturePlugin" />
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <source-file 
+          src="src/com/rossgerbasi/cordova/glass/GlassGesturePlugin.java" 
+          target-dir="src/com/rossgerbasi/cordova/glass" />
+    </platform>
+</plugin>
