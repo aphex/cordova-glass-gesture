@@ -32,5 +32,7 @@
         <source-file 
           src="src/com/rossgerbasi/cordova/glass/GlassGesturePlugin.java" 
           target-dir="src/com/rossgerbasi/cordova/glass" />
+
+          <source-file src="libs/gdk.jar" target-dir="libs"/>
     </platform>
 </plugin>
