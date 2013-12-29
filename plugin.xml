@@ -20,6 +20,8 @@
         <engine name="cordova" version=">=3.0" />
     </engines>
 
+    <dependency id="com.rossgerbasi.cordova.glass.core" url="https://github.com/aphex/cordova-glass-core"/>
+
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/widget">
