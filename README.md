@@ -24,7 +24,6 @@ document.addEventListener('swiperight',
 - tap
 - longpress
 - swipeup
-- swipedown
 - swipeleft 
 - swiperight
 - twotap
