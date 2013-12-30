@@ -18,7 +18,14 @@ public class GlassGesturePlugin extends CordovaPlugin implements GestureDetector
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 //        Log.d("GlassGesturePlugin", "Glass Gesture Initialize");
         super.initialize(cordova, webView);
-        this.webView.setOnGenericMotionListener(this);
+
+        CordovaPlugin glassCore = this.webView.pluginManager.getPlugin("GlassCore");
+        if(glassCore != null) {
+            glassCore.onMessage("setMotionListener", this);
+        } else {
+            Log.d("GlassTouchPlugin", "Unable to find GlassCore Plugin to attach listener");
+        }
+
         mGestureDetector = new GestureDetector(this.webView.getContext());
         mGestureDetector.setBaseListener(this);
         mGestureDetector.setFingerListener(this);
@@ -86,6 +93,6 @@ public class GlassGesturePlugin extends CordovaPlugin implements GestureDetector
     private void fireEvent(String type, JSONObject data) {
         String js = "javascript:try{cordova.fireDocumentEvent('"+type+"'" + (data != null  ? "," + data : "") +" );}catch(e){console.log('exception firing gesture event from native');};";
         webView.loadUrl(js);
-//        Log.d("GlassGesturePlugin", "Sent: " + type + " with: " + data);
+        //Log.d("GlassGesturePlugin", "Sent: " + type + " with: " + data);
     }
 }
