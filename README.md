@@ -1,4 +1,8 @@
-##CordovaGlassGesture##
+##Cordova Glass Gesture##
+---
+
+### **This plugin will *not* get further updates as it has been merged into the [Cordova Glass Plugin](https://github.com/aphex/cordova-glass) that contains all the same features plus voice triggering, voice prompting and touch event processing.** ###
+
 ---
 
 This plugin adds gesture support from the Google Glass Touchpad to your Cordova based Application.
